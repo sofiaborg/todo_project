@@ -16,10 +16,8 @@ for (i = 0; i < listItem.length; i++) {
   let li = document.createElement("li");
   li.innerHTML = listItem[i];
 
-  let completeBtn = document.createElement("button");
-  let btnText = document.createTextNode("");
-  completeBtn.classList.add("fas", "fa-check");
-  completeBtn.appendChild(btnText);
+  let completeBtn = document.createElement("input");
+  completeBtn.type = "checkbox";
 
   li.appendChild(completeBtn);
   ulList.appendChild(li);
@@ -33,6 +31,10 @@ for (i = 0; i < listItem.length; i++) {
 
 container.appendChild(ulList);
 console.log(ulList);
+
+// let btnText = document.createTextNode("");
+//   completeBtn.classList.add("fas", "fa-check");
+// completeBtn.appendChild(btnText);
 
 //använda array push för att lägga till ny sak sist i en array
 

@@ -1,5 +1,7 @@
 body,
 html {
+  font-size: 14pt;
+  font-family: Century gothic, Helvetica, sans-serif;
   #headline {
     display: flex;
     justify-content: center;
@@ -11,7 +13,6 @@ html {
   align-items: center;
   gap: 40px;
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
   #task-container,
   #complete-container {
     background-color: #e0e2db;
@@ -30,7 +31,7 @@ html {
 
 .markcomplete {
   text-decoration: line-through;
-  color: lightgray;
+  color: rgb(94, 94, 94);
 }
 
 .itemstyling {
