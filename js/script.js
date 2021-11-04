@@ -11,14 +11,19 @@ let listItem = [
 ];
 
 let ulList = document.createElement("ul");
+let container = document.getElementById("task-container");
 for (i = 0; i < listItem.length; i++) {
   let li = document.createElement("li");
   li.innerHTML = listItem[i];
 
   let completeBtn = document.createElement("button");
-  completeBtn.innerHTML = "klar";
+  let btnText = document.createTextNode("");
+  completeBtn.classList.add("fas", "fa-check");
+  completeBtn.appendChild(btnText);
+
   li.appendChild(completeBtn);
   ulList.appendChild(li);
+  container.appendChild(ulList);
 
   li.addEventListener("click", handleclick);
   function handleclick() {
@@ -26,7 +31,7 @@ for (i = 0; i < listItem.length; i++) {
   }
 }
 
-document.body.appendChild(ulList);
+container.appendChild(ulList);
 console.log(ulList);
 
 //använda array push för att lägga till ny sak sist i en array
