@@ -14,15 +14,16 @@
     <title>todolist</title>
   </head>
   <body>
-    <div id="headline"><h1>Todo-lista</h1></div>
-    <div id="task-container">
-      <h2>Att göra</h2>
-      <form id="todoForm">
-        <input type="text" id="todoInput" />
-        <button id="todoBtn">Lägg till</button>
-      </form>
+    <div id="container">
+      <h1>Todo-lista</h1>
+      <div id="todo-container">
+        <div id="task-container">
+          <h2>Att göra</h2>
+          <form id="newTask"><input /><button>+</button></form>
+        </div>
+        <div id="complete-container"><h2>Klart</h2></div>
+      </div>
     </div>
-    <div id="complete-container"><h2>Klart</h2></div>
     <script src="js/script.js"></script>
   </body>
 </html>
