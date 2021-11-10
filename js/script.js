@@ -1,4 +1,3 @@
-//skapar class innehållandes class constructor. Jag skriver ej ut DONE för den ska ej ändras förrän i en if-sats
 class Todos {
   constructor(taskName) {
     this.uppgift = taskName;
@@ -6,18 +5,22 @@ class Todos {
   }
 }
 
-//skapar class-vaiabler som blir object
 let taskOne = new Todos("tvätta");
 let taskTwo = new Todos("städa");
 let taskThree = new Todos("plugga");
 
 window.onload = function () {
+  document.getElementById("input");
+  let newTodoBtn = document.getElementById("newTodoBtn");
+  newTodoBtn.addEventListener("click", handleNewTask);
+
   printTodos();
 };
 
 let listItem = [taskOne, taskTwo, taskThree];
 let ulList = document.createElement("ul");
 let container = document.getElementById("task-container");
+let completeContainer = document.getElementById("complete-container");
 
 //en funktion för att skriva ut array
 function printTodos() {
@@ -32,7 +35,6 @@ function printTodos() {
 
     if (listItem[i].status == true) {
       completeBtn.checked = true;
-      li.className = "markcomplete";
     }
 
     completeBtn.addEventListener("click", () => {
@@ -41,12 +43,12 @@ function printTodos() {
 
     ulList.appendChild(li);
   } //for-loop slutar
+
   container.appendChild(ulList);
   console.log(listItem);
 }
 
 function btnClick(i) {
-  //let id = this.id.split("-").pop();
   console.log(i);
 
   listItem[i].status = !listItem[i].status;
@@ -54,17 +56,12 @@ function btnClick(i) {
     this.checked = true;
   }
 
-  // detta är samma sak som att göra en if/else-sats med true/false
-  // if (listItem[i].status === false) {
-  //   listItem[id].status = true;
-  //   console.log(this);
-
-  //   console.log(listItem);
-  // } else {
-  //   listItem[id].status = false;
-  //   console.log(listItem);
-  // }
-
+  printTodos();
+}
+function handleNewTask() {
+  let newTask = new Todos(input.value);
+  listItem.push(newTask);
+  console.log(newTask);
   printTodos();
 }
 
