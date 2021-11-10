@@ -55,9 +55,9 @@ function btnClick(i) {
   if (listItem[i].status == true) {
     this.checked = true;
   }
-
   printTodos();
 }
+
 function handleNewTask() {
   let newTask = new Todos(input.value);
   listItem.push(newTask);
