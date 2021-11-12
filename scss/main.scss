@@ -1,39 +1,93 @@
 body,
 html {
+  font-family: "Karla", sans-serif;
   font-size: 14pt;
-  font-family: calibri light;
-  background-color: #d2d4c8;
   height: 100%;
+  background-color: rgb(209, 209, 178);
   #container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    h1 {
+      font-family: Helvetica, sans-serif;
+    }
+    #todo-container {
+      #task-container {
+        background-color: rgb(236, 236, 213);
+        width: 300px;
+        border-radius: 9px;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        #form {
+          padding-left: 41px;
+          input {
+            background-color: rgb(255, 255, 255);
+            height: 30px;
+            border-radius: 5px;
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12);
+            border-style: none;
+          }
+          button {
+            cursor: pointer;
+          }
+          span.fas.fa-sort::before {
+            cursor: pointer;
+          }
+        }
+        .ulStyle {
+          width: 150px;
+          margin-top: 20px;
+          margin-left: 20px;
+          padding: 0px;
+          font-size: 1em;
+          display: flex;
+          flex-direction: column;
 
-    #task-container,
-    #complete-container {
-      background-color: #e0e2db;
-      width: 400px;
-      border-radius: 9px;
-      box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+          .liStyle {
+            padding: 0px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .div {
+              height: 20px;
+            }
+            p {
+              font-size: 0.9em;
+              cursor: pointer;
+              margin: 0px;
+              padding: 0px;
+            }
+            .checkboxStyle {
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
 }
 
-.liststyle {
-  margin: 20px;
-}
-
-.checkboxStyle {
-  cursor: pointer;
-}
-
 .markcomplete {
-  text-decoration: line-through;
-  color: rgb(94, 94, 94);
+  height: 20px;
+  color: grey;
+  padding: 0px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .itemstyling {
@@ -41,13 +95,14 @@ html {
 }
 
 @media screen and (min-width: 768px) {
-  #container {
-    display: flex;
-    flex-direction: column;
-    #todo-container {
-      display: flex;
-      flex-direction: row;
-      gap: 30px;
+  body,
+  html {
+    #container {
+      #todo-container {
+        #task-container {
+          width: 700px;
+        }
+      }
     }
   }
 }
