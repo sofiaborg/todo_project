@@ -1,21 +1,29 @@
 body,
 html {
+  margin: 0px;
   font-family: "Karla", sans-serif;
   font-size: 14pt;
   height: 100%;
-  background-color: rgb(209, 209, 178);
+  background: url("../img/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   #container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     h1 {
-      font-family: Helvetica, sans-serif;
+      font-family: century gothic;
+      text-transform: uppercase;
+      font-size: 2em;
+      margin-top: 80px;
+      margin-bottom: 50px;
     }
     #todo-container {
       #task-container {
-        background-color: rgb(236, 236, 213);
-        width: 300px;
+        background-color: rgb(255, 255, 255);
+        font-size: 1em;
+        width: 350px;
         border-radius: 9px;
         box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12);
         display: flex;
@@ -31,23 +39,31 @@ html {
             box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12);
             border-style: none;
           }
-          button {
+          input[type="text"] {
+            font-family: "Karla", sans-serif;
+            font-size: 1em;
+          }
+          .newTodoBtnStyle {
             cursor: pointer;
+            background-color: rgb(236, 236, 213);
+            font-size: 1.2em;
+            font-weight: bold;
+            border-style: none;
           }
           span.fas.fa-sort::before {
             cursor: pointer;
           }
         }
         .ulStyle {
-          width: 150px;
+          width: 300px;
           margin-top: 20px;
           margin-left: 20px;
           padding: 0px;
           font-size: 1em;
           display: flex;
           flex-direction: column;
-
           .liStyle {
+            height: 20px;
             padding: 0px;
             margin-bottom: 10px;
             padding: 5px;
@@ -57,41 +73,38 @@ html {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            cursor: pointer;
+          }
+          .markcomplete {
+            padding: 0px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgb(158, 157, 157);
+            cursor: pointer;
             .div {
               height: 20px;
+              width: 30px;
+              .checkboxStyle {
+                cursor: pointer;
+              }
             }
+
             p {
               font-size: 0.9em;
               cursor: pointer;
               margin: 0px;
-              padding: 0px;
-            }
-            .checkboxStyle {
-              cursor: pointer;
             }
           }
         }
       }
     }
   }
-}
-
-.markcomplete {
-  height: 20px;
-  color: grey;
-  padding: 0px;
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid grey;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.itemstyling {
-  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

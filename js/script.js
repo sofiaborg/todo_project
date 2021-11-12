@@ -10,9 +10,13 @@ let taskTwo = new Todos("run");
 let taskThree = new Todos("climb");
 
 window.onload = function () {
+  // lägger till en input-box
   document.getElementById("input");
   let newTodoBtn = document.getElementById("newTodoBtn");
   newTodoBtn.addEventListener("click", handleNewTask);
+  newTodoBtn.className = "newTodoBtnStyle";
+
+  //läggger till sort och sort-funktion
   let sortTasks = document.createElement("span");
   sortTasks.title = "Sort by task status";
   sortTasks.className = "fas fa-sort";
@@ -76,13 +80,11 @@ function printTodos() {
 }
 
 function btnClick(i) {
-  console.log(i);
   listItem[i].status = !listItem[i].status;
   if (listItem[i].status == true) {
     this.checked = true;
   }
   printTodos();
-  console.log(listItem);
 }
 
 function remove(i) {
@@ -92,17 +94,17 @@ function remove(i) {
 
 function handleNewTask() {
   event.preventDefault();
-  let newTask = new Todos(input.value);
-  listItem.push(newTask);
-  input.value = "";
-  printTodos();
-  console.log(listItem);
+  if (input.value.trim() != "") {
+    let newTask = new Todos(input.value);
+    listItem.push(newTask);
+    input.value = "";
+    printTodos();
+  }
 }
 
 function handleSort() {
   listItem.sort(function (a, b) {
     return a.status - b.status;
   });
-  console.log(listItem);
   printTodos();
 }
